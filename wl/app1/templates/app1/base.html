@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Wishlist{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light px-4 mb-4">
+        <a class="navbar-brand" href="{% url 'home' %}">Wishlist</a>
+        <div class="ms-auto">
+            <a href="{% url 'add_wish' %}" class="btn btn-outline-primary me-2">Add Wish</a>
+            <a href="{% url 'wish_list' %}" class="btn btn-outline-secondary me-2">My Wishes</a>
+            <a href="{% url 'public_wish_list' %}" class="btn btn-outline-info">Public Wishes</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block content %}
+        <!-- This is where page content will go -->
+        {% endblock %}
+    </div>
+</body>
+</html>
